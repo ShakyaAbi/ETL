@@ -1,0 +1,42 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ETL: Extraction",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/extract/execute.py",
+      "console": "integratedTerminal",
+      "python": "../pyspark/venv/bin/python",  // Adjust path for your environment
+      "args": [
+            "/home/nikhil/Data/extract"
+      ]
+    },
+    {
+      "name": "ETL: Transform",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/transform/execute.py",
+      "console": "integratedTerminal",
+      "python": "${workspaceFolder}/venv/bin/python",
+      "args": [
+            "/home/nikhil/Data/extract",
+            "/home/nikhil/Data/transform"
+      ]
+    },
+     {
+      "name": "ETL: Load",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/load/execute.py",
+      "console": "integratedTerminal",
+      "python": "${workspaceFolder}/venv/bin/python",
+      "args": [
+            "/home/nikhil/Data/transform",
+            "postgres",
+            "nikil123"
+      ]
+    }
+  ]
+}
+
